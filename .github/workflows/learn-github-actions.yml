@@ -11,4 +11,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-
+      	env:
+  			test_secret: ${{secrets.TEST_SECRET}}
+      - run: echo $test_secret
+	
