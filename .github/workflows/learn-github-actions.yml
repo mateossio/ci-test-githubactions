@@ -14,8 +14,7 @@ jobs:
   test-secrets:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          'echo "$SUPER_SECRET"'
+      - run: 'echo "$SUPER_SECRET"'
         shell: bash  
         env:
           SUPER_SECRET: ${{ secrets.TEST_SECRET }}
