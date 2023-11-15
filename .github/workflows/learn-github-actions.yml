@@ -14,7 +14,8 @@ jobs:
   test-secrets:
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "$SUPER_SECRET"'
+      - run: 'echo "$SUPER_SECRET" > secret-file'
         shell: bash  
         env:
           SUPER_SECRET: ${{ secrets.TEST_SECRET }}
+      - run: 'cat secret-file'
